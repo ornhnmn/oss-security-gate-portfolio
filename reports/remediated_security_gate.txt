@@ -1,0 +1,40 @@
+=======================================================
+OSS Security Gate V4.2.1
+=======================================================
+[PASS] Policy loaded
+[PASS] Severity data loaded
+[PASS] Exception data loaded
+[PASS] Policy validation completed
+[PASS] Exception configuration validated
+[PASS] Scan normalization completed
+
+=======================================================
+Security Gate Input Summary
+=======================================================
+Scan File: security/scan_results/remediated_scan.json
+Scanned Packages: 8
+Skipped Packages: 0
+Raw Vulnerabilities: 0
+Unique Vulnerabilities: 0
+Duplicate Records: 0
+
+Input Validation: PASS
+
+=======================================================
+Vulnerability Policy Evaluation
+=======================================================
+
+=======================================================
+Security Policy Summary
+=======================================================
+CRITICAL: 0
+HIGH: 0
+MEDIUM: 0
+LOW: 0
+UNKNOWN: 0
+Total Findings: 0
+Blocked Findings: 0
+Allowed Findings: 0
+Exception Findings: 0
+
+Deployment Decision: PASS

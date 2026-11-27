@@ -1,0 +1,19 @@
+
+exceptions:
+  - exception_id: "EX-TEST-002"
+    vulnerability_id: "CVE-2018-18074"
+    package: requests
+    version: "2.19.1"
+
+    reason: "Simulated expired exception"
+
+    owner: "test-development-owner"
+    approved_by: "test-security-reviewer"
+
+    approved_date: "2026-11-01"
+    expires_at: "2026-11-15"
+
+    compensating_controls:
+      - "Restrict outbound network access"
+
+    status: APPROVED

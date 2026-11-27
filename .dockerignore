@@ -1,0 +1,24 @@
+.venv*
+.git
+.github
+__pycache__
+*.pyc
+security/
+sbom/
+reports/
+docs/
+scripts/
+.DS_Store
+
+# CI artifacts and test files
+ci-artifacts/
+tests/
+
+# Sensitive local configuration
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+.netrc

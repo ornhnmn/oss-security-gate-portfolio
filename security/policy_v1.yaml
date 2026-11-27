@@ -1,0 +1,35 @@
+
+policy:
+  name: OSS Security Gate Policy
+  version: "1.0.0"
+  effective_date: "2026-11-27"
+
+severity_rules:
+  CRITICAL:
+    action: BLOCK
+    exception_allowed: false
+
+  HIGH:
+    action: BLOCK
+    exception_allowed: true
+
+  MEDIUM:
+    action: BLOCK
+    exception_allowed: true
+
+  LOW:
+    action: ALLOW
+    exception_allowed: false
+
+  UNKNOWN:
+    action: BLOCK
+    exception_allowed: false
+
+scan_validation:
+  block_on_skipped_packages: true
+  block_on_invalid_scan: true
+
+exception_policy:
+  require_approval: true
+  require_expiration: true
+  max_duration_days: 30

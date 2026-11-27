@@ -1,0 +1,20 @@
+
+exceptions:
+  - exception_id: "EX-TEST-001"
+    vulnerability_id: "CVE-2018-18074"
+    package: requests
+    version: "2.19.1"
+
+    reason: "Simulated legacy compatibility requirement"
+
+    owner: "test-development-owner"
+    approved_by: "test-security-reviewer"
+
+    approved_date: "2026-11-27"
+    expires_at: "2026-12-04"
+
+    compensating_controls:
+      - "Disable HTTP redirects"
+      - "Restrict outbound network access"
+
+    status: APPROVED

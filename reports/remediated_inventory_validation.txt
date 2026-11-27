@@ -1,0 +1,14 @@
+==================================================
+CI Inventory Validation
+==================================================
+Installed Packages: 8
+SCA Packages: 8
+SBOM Components: 8
+
+[Inventory vs SCA]
+Result: PASS
+
+[Inventory vs SBOM]
+Result: PASS
+
+Validation Result: PASS

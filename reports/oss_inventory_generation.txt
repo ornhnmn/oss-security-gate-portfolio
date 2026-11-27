@@ -1,0 +1,13 @@
+============================================================
+OSS Inventory Generation
+============================================================
+SBOM Components: 8
+SCA Packages: 8
+Metadata Packages: 8
+Inventory Validation: PASS
+Generated Records: 8
+DIRECT: 2
+TRANSITIVE: 4
+BUILD_TOOL: 2
+Approval Status: PENDING_REVIEW
+Output: docs/governance/oss_inventory.csv

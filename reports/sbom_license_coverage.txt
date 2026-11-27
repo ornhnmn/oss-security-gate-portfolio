@@ -1,0 +1,31 @@
+============================================================
+SBOM License Coverage Comparison
+============================================================
+
+Stage: Before
+Total Components: 8
+Components with License: 0
+Components without License: 8
+License Coverage: 0.00%
+PyYAML 6.0.4 []
+certifi 2026.11.20 []
+charset-normalizer 3.5.3 []
+idna 3.20 []
+packaging 26.4 []
+pip 26.3 []
+requests 2.34.2 []
+urllib3 2.8.0 []
+
+Stage: After
+Total Components: 8
+Components with License: 8
+Components without License: 0
+License Coverage: 100.00%
+PyYAML 6.0.4 [{'expression': 'MIT'}]
+certifi 2026.11.20 [{'expression': 'MPL-2.0'}]
+charset-normalizer 3.5.3 [{'expression': 'MIT'}]
+idna 3.20 [{'expression': 'BSD-3-Clause'}]
+packaging 26.4 [{'expression': 'Apache-2.0 OR BSD-2-Clause'}]
+pip 26.3 [{'expression': 'MIT'}]
+requests 2.34.2 [{'expression': 'Apache-2.0'}]
+urllib3 2.8.0 [{'expression': 'MIT'}]

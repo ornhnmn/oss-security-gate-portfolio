@@ -1,0 +1,22 @@
+=================================================================
+OSS Security Gate - SBOM License Enrichment
+=================================================================
+[PASS] PyYAML 6.0.4: MIT (license)
+[PASS] certifi 2026.11.20: MPL-2.0 (license)
+[PASS] charset-normalizer 3.5.3: MIT (license)
+[PASS] idna 3.20: BSD-3-Clause (license_expression)
+[PASS] packaging 26.4: Apache-2.0 OR BSD-2-Clause (license_expression)
+[PASS] pip 26.3: MIT (license_expression)
+[PASS] requests 2.34.2: Apache-2.0 (license)
+[PASS] urllib3 2.8.0: MIT (license_expression)
+
+=================================================================
+Enrichment Summary
+=================================================================
+Total Components: 8
+License Coverage Before: 0
+License Metadata Enriched: 8
+Unresolved Licenses: 0
+Inventory Validation: PASS
+CycloneDX Schema Validation: PASS
+Output: sbom/remediated_sbom_enriched.json

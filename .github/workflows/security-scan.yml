@@ -1,0 +1,152 @@
+name: OSS Security Gate
+
+on:
+  push:
+    branches:
+      - main
+      - 'feature/**'
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  security-gate:
+    name: OSS Security Validation
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    env:
+      ARTIFACT_DIR: ci-artifacts
+      IMAGE_NAME: oss-security-gate:ci
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Prepare artifact directory
+        run: mkdir -p "$ARTIFACT_DIR"
+
+      - name: Install security tools
+        run: |
+          python -m pip install -r requirements-tools.txt
+          python -m pip check
+          pip-audit --version
+          cyclonedx-py --version
+
+      - name: Run automated tests
+        run: |
+          python -m unittest discover -s tests -v \
+            2>&1 | tee "$ARTIFACT_DIR/test-results.txt"
+
+      - name: Build application image
+        run: |
+          docker build -t "$IMAGE_NAME" . \
+            2>&1 | tee "$ARTIFACT_DIR/build.log"
+
+      - name: Test application runtime
+        run: |
+          docker run --rm \
+            --network none \
+            --read-only \
+            --cap-drop ALL \
+            --security-opt no-new-privileges:true \
+            "$IMAGE_NAME" \
+            2>&1 | tee "$ARTIFACT_DIR/runtime.log"
+
+      - name: Extract installed packages
+        run: |
+          docker run --rm --network none \
+            "$IMAGE_NAME" \
+            python -m pip --no-cache-dir check
+
+          docker run --rm --network none \
+            "$IMAGE_NAME" \
+            python -m pip --no-cache-dir freeze --all \
+            > "$ARTIFACT_DIR/packages.txt"
+
+          test -s "$ARTIFACT_DIR/packages.txt"
+          cat "$ARTIFACT_DIR/packages.txt"
+
+      - name: Run SCA vulnerability scan
+        run: |
+          rm -f "$ARTIFACT_DIR/sca.json"
+
+          audit_status=0
+
+          pip-audit \
+            -r "$ARTIFACT_DIR/packages.txt" \
+            --no-deps \
+            --disable-pip \
+            --strict \
+            --progress-spinner off \
+            --format json \
+            --output "$ARTIFACT_DIR/sca.json" \
+            || audit_status=$?
+
+          echo "SCA exit code: $audit_status"
+
+          if [ "$audit_status" -gt 1 ]; then
+            echo "SCA execution failed"
+            exit "$audit_status"
+          fi
+
+          test -s "$ARTIFACT_DIR/sca.json"
+
+      - name: Generate CycloneDX SBOM
+        run: |
+          cyclonedx-py requirements \
+            "$ARTIFACT_DIR/packages.txt" \
+            --spec-version 1.6 \
+            --output-format JSON \
+            --validate \
+            --output-file "$ARTIFACT_DIR/sbom.json"
+
+      - name: Validate inventory consistency
+        run: |
+          python scripts/validate_ci_inventory.py \
+            2>&1 | tee "$ARTIFACT_DIR/inventory-validation.txt"
+
+      - name: Evaluate security policy
+        run: |
+          python scripts/security_gate.py \
+            --scan "$ARTIFACT_DIR/sca.json" \
+            2>&1 | tee "$ARTIFACT_DIR/security-gate.txt"
+
+      - name: Sanitize public SCA evidence
+        if: always()
+        run: |
+          if [ -s "$ARTIFACT_DIR/sca.json" ]; then
+            python scripts/sanitize_sca.py \
+              --input "$ARTIFACT_DIR/sca.json" \
+              --output "$ARTIFACT_DIR/sca_public.json"
+          fi
+
+      - name: Upload security artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: oss-security-evidence
+          path: |
+            ci-artifacts/packages.txt
+            ci-artifacts/sca_public.json
+            ci-artifacts/sbom.json
+            ci-artifacts/test-results.txt
+            ci-artifacts/inventory-validation.txt
+            ci-artifacts/security-gate.txt
+          retention-days: 14
+          if-no-files-found: warn
+
+defaults:
+  run:
+    shell: bash

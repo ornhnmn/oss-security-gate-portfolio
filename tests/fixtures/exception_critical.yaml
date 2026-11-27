@@ -1,0 +1,19 @@
+
+exceptions:
+  - exception_id: "EX-TEST-004"
+    vulnerability_id: "CVE-2020-14343"
+    package: pyyaml
+    version: "5.3"
+
+    reason: "Simulated prohibited exception"
+
+    owner: "test-development-owner"
+    approved_by: "test-security-reviewer"
+
+    approved_date: "2026-11-27"
+    expires_at: "2026-12-04"
+
+    compensating_controls:
+      - "Restrict YAML input sources"
+
+    status: APPROVED

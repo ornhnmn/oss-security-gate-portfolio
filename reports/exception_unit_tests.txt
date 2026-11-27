@@ -1,0 +1,21 @@
+test_01_valid_exception (test_exception_manager.TestExceptionManager.test_01_valid_exception) ... ok
+test_02_expired_exception (test_exception_manager.TestExceptionManager.test_02_expired_exception) ... ok
+test_03_pending_exception (test_exception_manager.TestExceptionManager.test_03_pending_exception) ... ok
+test_04_critical_exception (test_exception_manager.TestExceptionManager.test_04_critical_exception) ... ok
+test_05_unknown_exception (test_exception_manager.TestExceptionManager.test_05_unknown_exception) ... ok
+test_06_approval_date (test_exception_manager.TestExceptionManager.test_06_approval_date) ... ok
+test_07_before_approval (test_exception_manager.TestExceptionManager.test_07_before_approval) ... ok
+test_08_before_expiration (test_exception_manager.TestExceptionManager.test_08_before_expiration) ... ok
+test_09_expiration_date (test_exception_manager.TestExceptionManager.test_09_expiration_date) ... ok
+test_10_duration_exceeded (test_exception_manager.TestExceptionManager.test_10_duration_exceeded) ... ok
+test_11_self_approval (test_exception_manager.TestExceptionManager.test_11_self_approval) ... ok
+test_12_version_mismatch (test_exception_manager.TestExceptionManager.test_12_version_mismatch) ... ok
+test_13_missing_controls (test_exception_manager.TestExceptionManager.test_13_missing_controls) ... ok
+test_14_ambiguous_exception (test_exception_manager.TestExceptionManager.test_14_ambiguous_exception) ... ok
+test_15_invalid_timezone (test_exception_manager.TestExceptionManager.test_15_invalid_timezone) ... ok
+test_16_no_exception (test_exception_manager.TestExceptionManager.test_16_no_exception) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.025s
+
+OK

@@ -1,0 +1,20 @@
+=== Cross-Architecture Validation ===
+ARM64 Image:
+linux/arm64
+AMD64 Image:
+linux/amd64
+
+=== Package Inventory Comparison ===
+Diff Exit Code: 0
+
+=== AMD64 Runtime Test ===
+==================================================
+OSS Security Gate - Sample Application
+==================================================
+Service: banking-api
+Environment: development
+Debug: False
+PyYAML Version: 5.3
+Requests Version: 2.19.1
+TLS Verification: True
+Runtime Exit Code: 0

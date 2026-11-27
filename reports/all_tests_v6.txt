@@ -1,0 +1,36 @@
+test_001_valid_inventory (test_ci_inventory.TestCIInventory.test_001_valid_inventory) ... ok
+test_002_missing_sca_package (test_ci_inventory.TestCIInventory.test_002_missing_sca_package) ... ok
+test_003_missing_sbom_package (test_ci_inventory.TestCIInventory.test_003_missing_sbom_package) ... ok
+test_004_version_mismatch (test_ci_inventory.TestCIInventory.test_004_version_mismatch) ... ok
+test_005_skipped_package (test_ci_inventory.TestCIInventory.test_005_skipped_package) ... ok
+test_006_invalid_json (test_ci_inventory.TestCIInventory.test_006_invalid_json) ... ok
+test_007_empty_inventory (test_ci_inventory.TestCIInventory.test_007_empty_inventory) ... ok
+test_008_missing_input_file (test_ci_inventory.TestCIInventory.test_008_missing_input_file) ... ok
+test_01_valid_exception (test_exception_manager.TestExceptionManager.test_01_valid_exception) ... ok
+test_02_expired_exception (test_exception_manager.TestExceptionManager.test_02_expired_exception) ... ok
+test_03_pending_exception (test_exception_manager.TestExceptionManager.test_03_pending_exception) ... ok
+test_04_critical_exception (test_exception_manager.TestExceptionManager.test_04_critical_exception) ... ok
+test_05_unknown_exception (test_exception_manager.TestExceptionManager.test_05_unknown_exception) ... ok
+test_06_approval_date (test_exception_manager.TestExceptionManager.test_06_approval_date) ... ok
+test_07_before_approval (test_exception_manager.TestExceptionManager.test_07_before_approval) ... ok
+test_08_before_expiration (test_exception_manager.TestExceptionManager.test_08_before_expiration) ... ok
+test_09_expiration_date (test_exception_manager.TestExceptionManager.test_09_expiration_date) ... ok
+test_10_duration_exceeded (test_exception_manager.TestExceptionManager.test_10_duration_exceeded) ... ok
+test_11_self_approval (test_exception_manager.TestExceptionManager.test_11_self_approval) ... ok
+test_12_version_mismatch (test_exception_manager.TestExceptionManager.test_12_version_mismatch) ... ok
+test_13_missing_controls (test_exception_manager.TestExceptionManager.test_13_missing_controls) ... ok
+test_14_ambiguous_exception (test_exception_manager.TestExceptionManager.test_14_ambiguous_exception) ... ok
+test_15_invalid_timezone (test_exception_manager.TestExceptionManager.test_15_invalid_timezone) ... ok
+test_16_no_exception (test_exception_manager.TestExceptionManager.test_16_no_exception) ... ok
+test_01_default_block (test_security_gate.TestSecurityGate.test_01_default_block) ... ok
+test_02_exception_pass (test_security_gate.TestSecurityGate.test_02_exception_pass) ... ok
+test_03_expired_exception (test_security_gate.TestSecurityGate.test_03_expired_exception) ... ok
+test_04_clean_scan (test_security_gate.TestSecurityGate.test_04_clean_scan) ... ok
+test_05_missing_scan (test_security_gate.TestSecurityGate.test_05_missing_scan) ... ok
+test_06_invalid_json (test_security_gate.TestSecurityGate.test_06_invalid_json) ... ok
+test_07_skipped_package (test_security_gate.TestSecurityGate.test_07_skipped_package) ... ok
+
+----------------------------------------------------------------------
+Ran 31 tests in 0.750s
+
+OK

@@ -1,0 +1,200 @@
+==================================================
+OSS Security Gate - Scan Analysis V3.1
+==================================================
+Scan File: security/scan_results/container_scan.json
+
+Package: certifi
+Version: 2026.11.20
+Dependency Type: TRANSITIVE
+Raw Vulnerabilities: 0
+Unique Vulnerabilities: 0
+
+Package: chardet
+Version: 3.0.4
+Dependency Type: TRANSITIVE
+Raw Vulnerabilities: 0
+Unique Vulnerabilities: 0
+
+Package: cython
+Version: 0.29.37
+Dependency Type: BUILD_TOOL
+Raw Vulnerabilities: 0
+Unique Vulnerabilities: 0
+
+Package: idna
+Version: 2.7
+Dependency Type: TRANSITIVE
+  - ID: PYSEC-2024-60
+    CVE: CVE-2024-3651
+    GHSA: GHSA-jjg7-2v4v-x38h
+    Fix: 3.7
+  - ID: PYSEC-2026-215
+    CVE: CVE-2026-45409
+    GHSA: GHSA-65pc-fj4g-8rjx
+    Fix: 3.15
+Raw Vulnerabilities: 4
+Unique Vulnerabilities: 2
+
+Package: packaging
+Version: 26.4
+Dependency Type: BUILD_TOOL
+Raw Vulnerabilities: 0
+Unique Vulnerabilities: 0
+
+Package: pip
+Version: 24.0
+Dependency Type: BUILD_TOOL
+  - ID: PYSEC-2026-1795
+    CVE: CVE-2025-8869
+    GHSA: GHSA-4xh5-x5gv-qwph
+    Fix: 25.3
+  - ID: PYSEC-2026-1796
+    CVE: CVE-2026-1703
+    GHSA: GHSA-6vgw-5pg2-w6jp
+    Fix: 26.0
+  - ID: PYSEC-2026-2875
+    CVE: CVE-2026-3219
+    GHSA: GHSA-58qw-9mgm-455v
+    Fix: 26.1
+  - ID: PYSEC-2026-2876
+    CVE: CVE-2026-6357
+    GHSA: GHSA-jp4c-xjxw-mgf9
+    Fix: 26.1
+  - ID: PYSEC-2026-196
+    CVE: CVE-2026-8643
+    GHSA: GHSA-wf93-45jw-7689
+    Fix: 26.1.2
+  - ID: PYSEC-2026-3721
+    CVE: CVE-2026-13346
+    GHSA: GHSA-qwm4-qh6w-59xr
+    Fix: 26.2.0, 26.2
+Raw Vulnerabilities: 12
+Unique Vulnerabilities: 6
+
+Package: pyyaml
+Version: 5.3
+Dependency Type: DIRECT
+  - ID: PYSEC-2020-96
+    CVE: CVE-2020-1747, CVE-2025-50460
+    GHSA: GHSA-6757-jp84-gxfx, GHSA-fm6c-f59h-7mmg
+    Fix: 5.3.1
+  - ID: PYSEC-2021-142
+    CVE: CVE-2020-14343
+    GHSA: GHSA-8q59-q68h-6hv4
+    Fix: 5.4
+Raw Vulnerabilities: 4
+Unique Vulnerabilities: 2
+
+Package: requests
+Version: 2.19.1
+Dependency Type: DIRECT
+  - ID: PYSEC-2018-28
+    CVE: CVE-2018-18074
+    GHSA: GHSA-x84v-xcm2-53pg
+    Fix: 2.20.0
+  - ID: PYSEC-2023-74
+    CVE: CVE-2023-32681
+    GHSA: GHSA-j8r2-6x86-q33q
+    Fix: 2.31.0
+  - ID: PYSEC-2026-1873
+    CVE: CVE-2024-35195
+    GHSA: GHSA-9wx4-h78v-vm56
+    Fix: 2.32.0
+  - ID: PYSEC-2026-1872
+    CVE: CVE-2024-47081
+    GHSA: GHSA-9hjg-9r4m-mvj7
+    Fix: 2.32.4
+  - ID: PYSEC-2026-2275
+    CVE: CVE-2026-25645
+    GHSA: GHSA-gc5v-m9x4-r6x2
+    Fix: 2.33.0
+Raw Vulnerabilities: 10
+Unique Vulnerabilities: 5
+
+Package: setuptools
+Version: 79.0.1
+Dependency Type: BUILD_TOOL
+  - ID: PYSEC-2026-3447
+    CVE: CVE-2026-59890
+    GHSA: GHSA-h35f-9h28-mq5c
+    Fix: 83.0.0
+  - ID: GHSA-xmj3-9gf7-h52w
+    CVE: N/A
+    GHSA: N/A
+    Fix: 84.1.0
+Raw Vulnerabilities: 3
+Unique Vulnerabilities: 2
+
+Package: urllib3
+Version: 1.23
+Dependency Type: TRANSITIVE
+  - ID: PYSEC-2019-133
+    CVE: CVE-2019-11324
+    GHSA: GHSA-mh33-7rrq-662w
+    Fix: 1.24.2
+  - ID: PYSEC-2019-132
+    CVE: CVE-2019-11236
+    GHSA: GHSA-r64q-w8jr-g9qp
+    Fix: 1.24.3
+  - ID: PYSEC-2020-148
+    CVE: CVE-2020-26137
+    GHSA: GHSA-wqvq-5m8c-6g24
+    Fix: 1.25.9
+  - ID: PYSEC-2026-1995
+    CVE: CVE-2024-37891
+    GHSA: GHSA-34jh-p97f-mpxf
+    Fix: 1.26.19, 2.2.2
+  - ID: PYSEC-2023-192
+    CVE: CVE-2023-43804
+    GHSA: GHSA-v845-jxx5-vc9f
+    Fix: 1.26.17, 2.0.6
+  - ID: PYSEC-2023-207
+    CVE: CVE-2018-25091
+    GHSA: GHSA-gwvm-45gx-3cf8
+    Fix: 1.24.2
+  - ID: PYSEC-2023-212
+    CVE: CVE-2023-45803
+    GHSA: GHSA-g4mx-q9vg-27p4
+    Fix: 1.26.18, 2.0.7
+  - ID: PYSEC-2026-1999
+    CVE: CVE-2025-50181
+    GHSA: GHSA-pq67-6m6q-mj2v
+    Fix: 2.5.0
+  - ID: PYSEC-2026-1994
+    CVE: CVE-2025-66471
+    GHSA: GHSA-2xpw-w6gg-jr37
+    Fix: 2.6.0
+  - ID: PYSEC-2026-1996
+    CVE: CVE-2026-21441
+    GHSA: GHSA-38jv-5279-wg99
+    Fix: 2.6.3
+  - ID: PYSEC-2026-141
+    CVE: CVE-2026-44431
+    GHSA: GHSA-qccp-gfcp-xxvc
+    Fix: 2.7.0
+  - ID: PYSEC-2026-4177
+    CVE: CVE-2026-97689
+    GHSA: GHSA-vxq7-64xx-v4gw
+    Fix: 2.8.0
+Raw Vulnerabilities: 23
+Unique Vulnerabilities: 12
+
+Package: wheel
+Version: 0.46.3
+Dependency Type: BUILD_TOOL
+Raw Vulnerabilities: 0
+Unique Vulnerabilities: 0
+
+==================================================
+Scan Summary
+==================================================
+Total Packages: 11
+Skipped Packages: 0
+Vulnerable Packages: 6
+Raw Vulnerabilities: 56
+Unique Vulnerabilities: 29
+Duplicate Records: 27
+Direct Vulnerabilities: 7
+Transitive Vulnerabilities: 14
+Build Tool Vulnerabilities: 8
+Duplicate Rate: 48.21%
